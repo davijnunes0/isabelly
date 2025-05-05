@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer me beijar isabelly?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #ffe6f2;
+            padding: 50px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #ff69b4;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        
+        .botoes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        #sim {
+            background: #ff69b4;
+            color: white;
+        }
+        
+        #nao {
+            background: #cccccc;
+            color: #666;
+        }
+        
+        button:hover {
+            transform: scale(1.1);
+        }
+        
+        .coracao {
+            font-size: 60px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quer me beijar?💖</h1>
+        <div class="botoes">
+            <button id="sim">SIM!</button>
+            <button id="nao">Não</button>
+        </div>
+        <div id="mensagem" class="coracao"></div>
+    </div>
+
+    <script>
+        const btnSim = document.getElementById('sim');
+        const btnNao = document.getElementById('nao');
+        const mensagem = document.getElementById('mensagem');
+
+        // Ação para o Sim
+        btnSim.addEventListener('click', () => {
+            mensagem.innerHTML = 'Eu também 💖s';
+            mensagem.style.display = 'block';
+            btnNao.style.display = 'none';
+        });
+
+        // Ação para o Não (divertida)
+        btnNao.addEventListener('mouseover', () => {
+            // Movimento aleatório
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            btnNao.style.position = 'absolute';
+            btnNao.style.left = x + 'px';
+            btnNao.style.top = y + 'px';
+        });
+
+        btnNao.addEventListener('click', () => {
+            mensagem.innerHTML = 'Não é uma opção válida! 😜';
+            mensagem.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
